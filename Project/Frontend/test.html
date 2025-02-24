@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Job Recommendation</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .nav_header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo-team {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .nav_logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav_logo .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-decoration: none;
+            color: black;
+        }
+
+        .Recommendation {
+            color: #007BFF;
+        }
+
+        .button-section-header {
+            display: flex;
+            gap: 1rem;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .mini-page {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            background: white;
+            padding: 1rem;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            z-index: 5;
+        }
+
+        .section__header {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin: 1rem 0;
+        }
+
+        h1 span {
+            color: #007BFF;
+        }
+
+        .grid {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            border: none;
+            background: none;
+            padding: 1rem;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-10px);
+        }
+
+        .profile {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .name-text {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="nav_header">
+            <div class="nav_logo">
+                <img class="logo-team" src="assets/logo (2).png">
+                <a href="#" class="logo">
+                    Job <span class="Recommendation">Recommendation</span>
+                </a>
+            </div>
+            <div class="button-section-header">
+                <button class="home-button">Home</button>
+                <button class="about-button">About</button>
+                <button class="Services-button">Services</button>
+                <div id="servicesPage" class="mini-page">
+                    <h3>Our Services</h3>
+                    <ul>
+                        <li><a href="#">Upload CV</a></li>
+                        <li><a href="#">Generate CV</a></li>
+                        <li><a href="#">Skill Matching</a></li>
+                        <li><a href="#">Location</a></li>
+                    </ul>
+                </div>
+                <button class="Register-button">Register</button>
+                <div id="miniPage" class="mini-page">
+                    <h3>User Profile</h3>
+                    <ul>
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Register</a></li>
+                        <li><a href="#">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="section__header">
+            <h1>Search, Apply &<br />Get Your <span>Dream Job</span></h1>
+            <p>Your future starts here. Discover countless opportunities and take the first step towards your career transformation.</p>
+            <div class="section_under_tittle">
+                <button class="btn">Upload CV</button>
+                <a href="#">
+                    <span><i class="ri-play-fill"></i></span> How It Works?
+                </a>
+            </div>
+        </section>
+        <div class="grid">
+            <button class="button">
+                <a class="link-feature" href="#">
+                    <img class="profile" src="assets/cv.png">
+                    <p class="name-text">Upload your CV now and let your skills shine!</p>
+                </a>
+            </button>
+            <button class="button">
+                <a class="link-feature" href="#">
+                    <img class="profile" src="assets/job.png">
+                    <p class="name-text">Explore career opportunities now!</p>
+                </a>
+            </button>
+            <button class="button">
+                <a class="link-feature" href="#">
+                    <img class="profile" src="assets/tracking.png">
+                    <p class="name-text">Track your application progress easily.</p>
+                </a>
+            </button>
+        </div>
+    </main>
+    <script>
+        const registerBtn = document.querySelector('.Register-button');
+        const miniPage = document.getElementById('miniPage');
+        const servicesBtn = document.querySelector('.Services-button');
+        const servicesPage = document.getElementById('servicesPage');
+
+        registerBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            miniPage.style.display = miniPage.style.display === 'block' ? 'none' : 'block';
+            servicesPage.style.display = 'none';
+        });
+
+        servicesBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            servicesPage.style.display = servicesPage.style.display === 'block' ? 'none' : 'block';
+            miniPage.style.display = 'none';
+        });
+
+        document.addEventListener('click', () => {
+            miniPage.style.display = 'none';
+            servicesPage.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

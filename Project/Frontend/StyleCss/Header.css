@@ -1,0 +1,133 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: #1B263B;
+    padding: 0 140px;
+    z-index: 100;
+}
+
+.nav_logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 12px;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 700;
+    color: #f8f9fa;
+}
+
+.logo-team {
+    height: 48px;
+}
+
+.Recommendation {
+    color: #d5ed00;
+    font-weight: bold;
+}
+/* Navigation */
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0 25px;
+}
+nav li {
+    padding: 12px 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffdd57;
+}
+svg{
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 260px;
+    background-color: #1B263B;
+    display: none;
+    flex-direction: column;
+    padding: 25px;
+    box-shadow: -3px 0 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+    display: flex;
+}
+
+.sidebar a {
+    color: white;
+    padding: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: #ffdd57;
+}
+
+/* Responsive Design */
+@media (max-width: 800px) {
+    .hideOnMobile {
+        display: none;
+    }
+    .menu-button {
+        display: block;
+    }
+}
+
+@media (max-width: 400px) {
+    .sidebar {
+        width: 100%;
+    }
+}
+
+/* Backdrop */
+.backdrop {
+    opacity: 0;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease;
+}
+
+.backdrop.visible {
+    opacity: 1;
+    visibility: visible;
+}
